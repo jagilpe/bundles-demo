@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Page information</h3>
+    </div>
+    <ul class="list-group">
+        {% for label, content in data %}
+        <li class="list-group-item">
+            <div class="row">
+                <span class="col-xs-4"><strong>{{ label }}</strong></span>
+                <span class="col-xs-8">{{ content }}</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

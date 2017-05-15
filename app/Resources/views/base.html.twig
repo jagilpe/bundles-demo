@@ -18,7 +18,9 @@
                 <div id="header-wrapper">
                     <div class="container">
                         <div class="col-xs-12">
-                            {{ jgp_menu('app_menu', 'full') }}
+                            {% block main_menu %}
+                                {{ jgp_menu('app_menu', 'full') }}
+                            {% endblock %}
                         </div>
                     </div>
                 </div>
@@ -26,12 +28,18 @@
             <div id="content_wrapper">
                 {% block content_wrapper %}
                     <div class="container">
-                        {% block siderbar_first_container %}
-                        {% endblock %}
-                        {% block page_content %}
-                        {% endblock %}
-                        {% block siderbar_second_container %}
-                        {% endblock %}
+                        {% set sidebar = sidebar is defined ? sidebar : false %}
+                        {% if sidebar %}
+                            <div class="hidden-xs col-sm-4 col-md-3">
+                                {% block sidebar_container %}
+                                {% endblock %}
+                            </div>
+                        {% endif %}
+                        {% set content_class = sidebar ? 'col-xs-12 col-sm-8 col-md-9' : 'col-xs-12' %}
+                        <div class="{{ content_class }}">
+                            {% block page_content %}
+                            {% endblock %}
+                        </div>
                     </div>
                 {% endblock %}
             </div>

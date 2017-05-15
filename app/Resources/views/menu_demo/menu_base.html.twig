@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block main_menu %}
+    {# We render the two menus, the one for small resolutions and the one for big resolutions
+        because in this point we can not know the resolution in which it will be seen.
+        The responsive classes from bootstrap will show only the right one #}
+    {{ jgp_menu('demo_mobile_menu', 'full') }}
+    {{ jgp_menu('demo_menu', 'full') }}
+{% endblock %}

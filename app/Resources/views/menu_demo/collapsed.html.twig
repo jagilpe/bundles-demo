@@ -1,0 +1,16 @@
+{% extends ':menu_demo:menu_base.html.twig' %}
+
+{% set sidebar = true %}
+
+{% block sidebar_container %}
+    <div class="submenu">
+        {{ jgp_menu('demo_menu', 'sidebar', {'level': 2}) }}
+    </div>
+    <div class="submenu">
+        {{ jgp_menu('demo_menu', 'sidebar', {'level': 3}) }}
+    </div>
+{% endblock %}
+
+{% block page_content %}
+    {{ render(controller('AppBundle:MenuDemo:routeData')) }}
+{% endblock %}
