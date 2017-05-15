@@ -1,0 +1,7 @@
+{% extends ':menu_demo:menu_base.html.twig' %}
+
+{% set sidebar = false %}
+
+{% block page_content %}
+    {{ render(controller('AppBundle:MenuDemo:routeData')) }}
+{% endblock %}

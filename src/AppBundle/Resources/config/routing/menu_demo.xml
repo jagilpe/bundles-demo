@@ -24,4 +24,19 @@
         <default key="template">:menu_demo:collapsed.html.twig</default>
     </route>
 
+    <route id="menu_drop_down" path="/drop-down">
+        <default key="_controller">FrameworkBundle:Template:template</default>
+        <default key="template">:menu_demo:drop_down.html.twig</default>
+    </route>
+
+    <route id="menu_drop_down_level_2" path="/drop-down/{level2}">
+        <default key="_controller">FrameworkBundle:Template:template</default>
+        <default key="template">:menu_demo:drop_down.html.twig</default>
+    </route>
+
+    <route id="menu_anchor" path="/anchors">
+        <default key="_controller">FrameworkBundle:Template:template</default>
+        <default key="template">:menu_demo:anchors.html.twig</default>
+    </route>
+
 </routes>

@@ -86,7 +86,9 @@ class MenuProvider extends AbstractMenuProvider
             'route' => 'homepage'
         ));
 
-        $menuBuilder->addMenuItem($this->getCollapsedMenuItem(!$mobile));
+        $menuBuilder->addMenuItem($this->getCollapsedMenuItem($mobile));
+        $menuBuilder->addMenuItem($this->getExpandableMenuItem());
+        $menuBuilder->addMenuItem($this->getAnchorsMenu($mobile));
 
         return $menuBuilder->getMenu();
     }
@@ -94,15 +96,15 @@ class MenuProvider extends AbstractMenuProvider
     /**
      * Returns the items of the collapsed menu
      *
-     * @param boolean $hideChildren
+     * @param boolean $mobile
      * @return MenuItem
      */
-    private function getCollapsedMenuItem($hideChildren)
+    private function getCollapsedMenuItem($mobile)
     {
         $collapsedMenu = $this->menuFactory->createMenuItem(array(
             'name' => 'Collapsed Menu',
             'route' => 'menu_collapsed',
-            'hide_children' => $hideChildren,
+            'hide_children' => !$mobile,
         ));
 
         for ($i = 1; $i < 4; $i++) {
@@ -135,5 +137,64 @@ class MenuProvider extends AbstractMenuProvider
         $collapsedMenu->add($otherChild);
 
         return $collapsedMenu;
+    }
+
+    /**
+     * Returns the items of the expandable menu
+     *
+     * @return MenuItem
+     */
+    private function getExpandableMenuItem()
+    {
+        $dropDownMenu = $this->menuFactory->createMenuItem(array(
+            'name' => 'Drop Down Menu',
+            'route' => 'menu_drop_down',
+        ));
+
+        for ($i = 1; $i < 5; $i++) {
+            // Child with more sub children
+            $child = $this->menuFactory->createMenuItem(array(
+                'name' => "Level 2 - Element $i",
+                'route' => 'menu_drop_down_level_2',
+                'route_params' => array('level2' => $i),
+            ));
+
+            $dropDownMenu->add($child);
+        }
+
+        return $dropDownMenu;
+    }
+
+    /**
+     * Returns a menu area that demonstrates the navigation with anchors
+     *
+     * @param boolean $mobile
+     * @return MenuItem
+     */
+    private function getAnchorsMenu($mobile)
+    {
+        $anchorMenu = $this->menuFactory->createMenuItem(array(
+            'name' => 'Anchor Menu',
+            'route' => 'menu_anchor',
+            'hide_children' => !$mobile,
+        ));
+
+        $anchors = array(
+            'first',
+            'second',
+            'third',
+            'forth'
+        );
+
+        foreach ($anchors as $anchor) {
+            $childItem = $this->menuFactory->createMenuItem(
+                array(
+                    'name' => "Anchor to $anchor target",
+                ));
+            $childItem->setRouteOptions(array('anchor' => $anchor));
+            $anchorMenu->add($childItem);
+        }
+
+        return $anchorMenu;
     }
 }
