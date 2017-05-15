@@ -2,12 +2,82 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Jagilpe Symfony Bundles Demo{% endblock %}</title>
+        {% block vendor_stylesheets %}
+            <!-- Bootstrap compiled and minified CSS -->
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        {% endblock %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <div id="main-wrapper">
+            {% block header_container %}
+                <div id="header-wrapper">
+                    <div class="container">
+                        <div class="col-xs-12">
+                            {{ jgp_menu('app_menu', 'full') }}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            <div id="content_wrapper">
+                {% block content_wrapper %}
+                    <div class="container">
+                        {% block siderbar_first_container %}
+                        {% endblock %}
+                        {% block page_content %}
+                        {% endblock %}
+                        {% block siderbar_second_container %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+            {% block footer_container %}
+                <div id="footer">
+                    {% block footer %}{% endblock %}
+                </div>
+            {% endblock %}
+            {% block post_javascripts %}
+            {% endblock %}
+            </div>
+        {% endblock %}
+        {% block vendor_javascripts %}
+            <script
+                    src="//code.jquery.com/jquery-2.2.4.min.js"
+                    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                    crossorigin="anonymous"></script>
+            <script>
+                if (typeof jQuery == 'undefined') {
+                    document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/jquery-2.2.4.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
+                }
+            </script>
+            <script src="//code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+            <script>
+                if (typeof jQuery.migrateMute == 'undefined') {
+                    document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/jquery-migrate-1.4.1.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
+                }
+            </script>
+            <script
+                    src="//code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+                    integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+                    crossorigin="anonymous"></script>
+            <script>
+                if (typeof jQuery.ui == 'undefined') {
+                    document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/jquery-ui-1.12.0.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
+                }
+            </script>
+            <!-- Latest compiled and minified Bootstrap JavaScript -->
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script>
+                if (typeof $().modal !== 'function') {
+                    document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/bootstrap-3.3.7.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
+                }
+            </script>
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

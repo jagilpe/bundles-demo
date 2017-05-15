@@ -1,0 +1,5 @@
+services:
+    app.menu_provider:
+        class: AppBundle\Service\MenuProvider
+        tags:
+            - { name: jgp_menu.service_provider }
