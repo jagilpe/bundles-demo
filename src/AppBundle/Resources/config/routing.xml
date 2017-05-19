@@ -8,9 +8,12 @@
         <default key="_controller">AppBundle:Default:index</default>
     </route>
 
-    <!-- Routes for the Common Application support -->
     <import
         resource="@AppBundle/Resources/config/routing/menu_demo.xml"
-        prefix="/menu-demo" />
+        prefix="/menu" />
+
+    <import
+            resource="@AppBundle/Resources/config/routing/ajax_blocks_demo.xml"
+            prefix="/ajax-blocks" />
 
 </routes>

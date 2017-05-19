@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% set sidebar = true %}
+
+{% block page_content %}
+    <div>
+        {% for blockId in 0..(numberOfBlocks - 1) %}
+            <div id="block-{{ blockId }}">
+                {{ jgp_ajax_block('AppBundle:AjaxBlocksDemo:simpleBlock', { blockId: blockId }) }}
+            </div>
+            <button id="reload-block-{{ blockId }}" class="btn btn-default reload-block">Reload block {{ blockId }}</button>
+        {% endfor %}
+    </div>
+    <button id="reload-all" class="btn btn-default">Reload all blocks</button>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        (function($, document, window, undefined) {
+            // Reload a determined block when clicking the correspondent button
+            $('.reload-block').click(function() {
+                var buttonId = $(this).attr('id');
+                var blockId = buttonId.replace('reload-', '');
+                $('#' + blockId + ' [data-target="jgp-ajax-block"]').jgpAjaxBlock('reloadBlock');
+            });
+
+            // Reload all the blocks in the page
+            $('#reload-all').click(function() {
+                $('[data-target="jgp-ajax-block"]').jgpAjaxBlock('reloadBlock');
+            });
+        })(jQuery, document, window);
+    </script>
+{% endblock %}

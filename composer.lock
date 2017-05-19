@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4e2adc3a53131a0f8be1b7b95d31675",
+    "content-hash": "bb803aa7d97e665481301a6606954960",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -883,6 +883,74 @@
                 "parameters management"
             ],
             "time": "2015-11-10T17:04:01+00:00"
+        },
+        {
+            "name": "jagilpe/ajax-blocks-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jagilpe/ajax-blocks-bundle.git",
+                "reference": "09e9f7ab39d858b2d09425cda63bd5ceb9b7442f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jagilpe/ajax-blocks-bundle/zipball/09e9f7ab39d858b2d09425cda63bd5ceb9b7442f",
+                "reference": "09e9f7ab39d858b2d09425cda63bd5ceb9b7442f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "symfony/http-kernel": "~2.8|~3.0",
+                "symfony/templating": "~2.8|~3.0",
+                "symfony/twig-bridge": "~2.8|~3.0",
+                "symfony/twig-bundle": "~2.8|~3.0",
+                "twig/twig": "~1.0|~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^2.8",
+                "symfony/asset": "~2.8|~3.0",
+                "symfony/browser-kit": "~2.8|~3.0",
+                "symfony/console": "~2.8|~3.0",
+                "symfony/css-selector": "~2.8|~3.0",
+                "symfony/dom-crawler": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/form": "~2.8|~3.0",
+                "symfony/framework-bundle": "~2.8|~3.0",
+                "symfony/http-foundation": "~2.8|~3.0",
+                "symfony/process": "~2.8|~3.0",
+                "symfony/security-acl": "~2.8|~3.0",
+                "symfony/validator": "~2.8|~3.0",
+                "symfony/var-dumper": "~2.8|~3.0",
+                "symfony/yaml": "~2.8|~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Jagilpe\\AjaxBlocksBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Javier Gil",
+                    "email": "javier@gilpereda.com"
+                }
+            ],
+            "description": "Symfony Bundle for rendering blocks refreshable with ajax requests",
+            "homepage": "https://github.com/jagilpe/ajax-blocks-bundle",
+            "keywords": [
+                "ajax",
+                "block",
+                "symfony"
+            ],
+            "time": "2017-05-04T10:01:58+00:00"
         },
         {
             "name": "jagilpe/menu-bundle",

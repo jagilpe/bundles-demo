@@ -59,6 +59,8 @@ class MenuProvider extends AbstractMenuProvider
             'route' => 'homepage'
         ));
 
+        $menuBuilder->addMenuItem($this->getAjaxBlocksMenu(false));
+
         $menuBuilder->newMenuItem(array(
             'name' => 'MenuBundle',
             'route' => 'menu_demo_home'
@@ -196,5 +198,29 @@ class MenuProvider extends AbstractMenuProvider
         }
 
         return $anchorMenu;
+    }
+
+    /**
+     * Returns the menu elements for the AjaxBlocks Bundle demo
+     *
+     * @param boolean $mobile
+     * @return MenuItem
+     */
+    private function getAjaxBlocksMenu($mobile)
+    {
+        $ajaxBlocksMenu = $this->menuFactory->createMenuItem(array(
+            'name' => 'AjaxBlocksBundle',
+            'route' => 'ajax_blocks_home',
+            'hide_children' => !$mobile,
+        ));
+
+        $simpleBlocks = $this->menuFactory->createMenuItem(array(
+            'name' => 'Simple ajax blocks',
+            'route' => 'ajax_blocks_simple',
+        ));
+
+        $ajaxBlocksMenu->add($simpleBlocks);
+
+        return $ajaxBlocksMenu;
     }
 }
