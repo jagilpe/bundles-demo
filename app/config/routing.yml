@@ -1,6 +1,10 @@
 app:
     resource: "@AppBundle/Resources/config/routing.xml"
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix: "/user"
+
 jgp_ajax_blocks:
     resource: "@AjaxBlocksBundle/Resources/config/routing.xml"
     prefix: "/jgp-ajax-blocks"
