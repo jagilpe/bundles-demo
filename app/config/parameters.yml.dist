@@ -19,5 +19,6 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
 
+    jgp_encryption_enabled: true
     jgp_master_key_file:  "%kernel.root_dir%/Resources/encryption/master-key.pem"
     jgp_master_key_passphrase: "secret"

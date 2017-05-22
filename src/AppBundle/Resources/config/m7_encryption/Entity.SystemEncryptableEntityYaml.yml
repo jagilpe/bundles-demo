@@ -1,0 +1,11 @@
+AppBundle\Entity\SystemEncryptableEntityYaml:
+    encryptionEnabled: true
+    encryptionMode: SYSTEM_ENCRYPTION
+    encryptedFields:
+        encryptedStringField: ~
+        encryptedTextField: ~
+        encryptedBooleanField: ~
+        encryptedIntegerField: ~
+        encryptedSimpleArrayField: ~
+        encryptedJsonArrayField: ~
+        encryptedDateTimeField: ~

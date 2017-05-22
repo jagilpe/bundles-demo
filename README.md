@@ -28,8 +28,14 @@ composer install
 # Generate and dump the assets
 php bin/console assetic:dump
 
+# Generate the database schema
+php bin/console doctrine:schema:create
+
+# Load the example data
+php bin/console hautelook_alice:doctrine:fixtures:load 
+
 # Start the Symfony server
-php bin/console server:start
+php bin/console server:run
 ```
 
 Now you should be able to open the Demo accessing http://127.0.0.1:8000

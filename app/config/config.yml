@@ -73,6 +73,14 @@ fos_user:
         sender_name: "%mailer_user%"
 
 jagilpe_encryption:
+    enabled: "%jgp_encryption_enabled%"
     master_key:
         cert_file: "%jgp_master_key_file%"
         passphrase: "%jgp_master_key_passphrase%"
+    settings:
+        default_mode: SYSTEM_ENCRYPTION
+        per_user_encryption_enabled: true
+        user_classes:
+            - 'AppBundle\Entity\User'
+        security_check_routes:
+            - fos_user_security_check
