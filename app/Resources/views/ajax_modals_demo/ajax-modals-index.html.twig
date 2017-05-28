@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block page_content %}
+<button class="btn btn-default modal-trigger" data-src="{{ path('ajax_modal_dialog') }}">Open modal form</button>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        (function($, document, window, undefined) {
+            var reloadAjaxBlocks = function() {
+                $('[data-target="jgp-ajax-block"]').jgpAjaxBlock('reloadBlock');
+            };
+
+            $('.modal-trigger').jgpModalDialog({
+                onSave: reloadAjaxBlocks,
+                onDelete: reloadAjaxBlocks
+            });
+        })(jQuery, document, window);
+    </script>
+{% endblock %}

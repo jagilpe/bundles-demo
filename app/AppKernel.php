@@ -17,9 +17,13 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+
+            // Jagilpe Bundles
             new Jagilpe\MenuBundle\JagilpeMenuBundle(),
             new Jagilpe\AjaxBlocksBundle\AjaxBlocksBundle(),
             new Jagilpe\EncryptionBundle\JagilpeEncryptionBundle(),
+            new Jagilpe\AjaxModalsBundle\JagilpeAjaxModalsBundle(),
+
             new AppBundle\AppBundle(),
         ];
 

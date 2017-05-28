@@ -1,0 +1,37 @@
+{% set success_msgs = app.session.flashbag.get('success') %}
+{% set info_msgs = app.session.flashbag.get('info') %}
+{% set warning_msgs = app.session.flashbag.get('warning') %}
+{% set error_msgs = app.session.flashbag.get('error') %}
+
+{% if success_msgs %}
+	<div class="col-xd-12 alert alert-success alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    {% for flashMessage in success_msgs %}
+			<p>{{ flashMessage }}</p>
+        {% endfor %}
+	</div>
+{% endif %}
+{% if info_msgs %}
+	<div class="col-xd-12 alert alert-info alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    {% for flashMessage in info_msgs %}
+			<p>{{ flashMessage }}</p>
+        {% endfor %}
+	</div>
+{% endif %}
+{% if warning_msgs %}
+	<div class="col-xd-12 alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    {% for flashMessage in warning_msgs %}
+			<p>{{ flashMessage }}</p>
+        {% endfor %}
+	</div>
+{% endif %}
+{% if error_msgs %}
+	<div class="col-xd-12 alert alert-danger alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    {% for flashMessage in error_msgs %}
+	        <p>{{ flashMessage }}</p>
+        {% endfor %}
+	</div>
+{% endif %}

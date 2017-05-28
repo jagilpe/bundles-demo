@@ -13,7 +13,11 @@
         prefix="/menu" />
 
     <import
-            resource="@AppBundle/Resources/config/routing/ajax_blocks_demo.xml"
-            prefix="/ajax-blocks" />
+        resource="@AppBundle/Resources/config/routing/ajax_blocks_demo.xml"
+        prefix="/ajax-blocks" />
+
+    <import
+        resource="@AppBundle/Resources/config/routing/ajax_modals_demo.xml"
+        prefix="/ajax-modals" />
 
 </routes>

@@ -14,6 +14,7 @@ use Jagilpe\MenuBundle\Provider\AbstractMenuProvider;
 class MenuProvider extends AbstractMenuProvider
 {
     const APP_MENU = 'app_menu';
+    const APP_MOBILE_MENU = 'app_mobile_menu';
 
     /**
      * Menus for the demo of the MenuBundle
@@ -36,7 +37,9 @@ class MenuProvider extends AbstractMenuProvider
     {
         switch ($menuName) {
             case self::APP_MENU:
-                return $this->getAppMenu();
+                return $this->getAppMenu(false);
+            case self::APP_MOBILE_MENU:
+                return $this->getAppMenu(true);
             case self::DEMO_MENU:
                 return $this->getDemoMenu(false);
             case self::DEMO_MOBILE_MENU:
@@ -49,9 +52,10 @@ class MenuProvider extends AbstractMenuProvider
     /**
      * Returns the main app menu
      *
+     * @param boolean $mobile
      * @return Menu
      */
-    private function getAppMenu()
+    private function getAppMenu($mobile)
     {
         $menuBuilder = $this->menuFactory->createMenuBuilder();
         $menuBuilder->newMenuItem(array(
@@ -59,7 +63,8 @@ class MenuProvider extends AbstractMenuProvider
             'route' => 'homepage'
         ));
 
-        $menuBuilder->addMenuItem($this->getAjaxBlocksMenu(false));
+        $menuBuilder->addMenuItem($this->getAjaxBlocksMenu($mobile));
+        $menuBuilder->addMenuItem($this->getAjaxModalsMenu($mobile));
 
         $menuBuilder->newMenuItem(array(
             'name' => 'MenuBundle',
@@ -220,6 +225,23 @@ class MenuProvider extends AbstractMenuProvider
         ));
 
         $ajaxBlocksMenu->add($simpleBlocks);
+
+        return $ajaxBlocksMenu;
+    }
+
+    /**
+     * Returns the menu elements for the AjaxModals Bundle demo
+     *
+     * @param boolean $mobile
+     * @return MenuItem
+     */
+    private function getAjaxModalsMenu($mobile)
+    {
+        $ajaxBlocksMenu = $this->menuFactory->createMenuItem(array(
+            'name' => 'AjaxModalsBundle',
+            'route' => 'ajax_modals_home',
+            'hide_children' => !$mobile,
+        ));
 
         return $ajaxBlocksMenu;
     }

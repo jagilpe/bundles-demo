@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a920889a747e1a8211acfe11f291b528",
+    "content-hash": "500339a3f2f982c08d0630cdfad6fcb5",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1028,6 +1028,43 @@
                 "symfony"
             ],
             "time": "2017-05-04T10:01:58+00:00"
+        },
+        {
+            "name": "jagilpe/ajax-modals-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/Users/javier/workspace/jagilpe/ajax-modals-bundle",
+                "reference": "2449baedc3e6d31b6200d85a56f39a7150093ae3"
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "symfony/framework-bundle": ">=2.3",
+                "symfony/twig-bundle": ">=2.3"
+            },
+            "require-dev": {
+                "symfony/yaml": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Jagilpe\\AjaxModalsBundle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Javier Gil",
+                    "email": "javier@gilpereda.com"
+                }
+            ],
+            "description": "Symfony Bundle to generate dialogs using Bootstrap Modal",
+            "keywords": [
+                "Ajax Bootstrap Modal Dialog"
+            ],
+            "time": "2017-05-25 16:20:13"
         },
         {
             "name": "jagilpe/encryption",
@@ -2944,7 +2981,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jagilpe/ajax-modals-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
