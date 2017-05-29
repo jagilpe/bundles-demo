@@ -65,6 +65,7 @@ class MenuProvider extends AbstractMenuProvider
 
         $menuBuilder->addMenuItem($this->getAjaxBlocksMenu($mobile));
         $menuBuilder->addMenuItem($this->getAjaxModalsMenu($mobile));
+        $menuBuilder->addMenuItem($this->getEntityListMenu($mobile));
 
         $menuBuilder->newMenuItem(array(
             'name' => 'MenuBundle',
@@ -237,12 +238,29 @@ class MenuProvider extends AbstractMenuProvider
      */
     private function getAjaxModalsMenu($mobile)
     {
-        $ajaxBlocksMenu = $this->menuFactory->createMenuItem(array(
+        $ajaxModalsMenu = $this->menuFactory->createMenuItem(array(
             'name' => 'AjaxModalsBundle',
             'route' => 'ajax_modals_home',
             'hide_children' => !$mobile,
         ));
 
-        return $ajaxBlocksMenu;
+        return $ajaxModalsMenu;
+    }
+
+    /**
+     * Returns the menu elements for the AjaxModals Bundle demo
+     *
+     * @param boolean $mobile
+     * @return MenuItem
+     */
+    private function getEntityListMenu($mobile)
+    {
+        $entityListMenu = $this->menuFactory->createMenuItem(array(
+            'name' => 'EntityListBundle',
+            'route' => 'entity_list_home',
+            'hide_children' => !$mobile,
+        ));
+
+        return $entityListMenu;
     }
 }

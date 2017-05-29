@@ -28,6 +28,7 @@
         "jagilpe/ajax-blocks-bundle": "^1.0",
         "jagilpe/ajax-modals-bundle": "^1.0",
         "jagilpe/encryption": "^1.0",
+        "jagilpe/entity-list-bundle": "^1.0",
         "jagilpe/menu-bundle": "^1.0",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",

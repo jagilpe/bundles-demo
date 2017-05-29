@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ebcd7e1ee051682488463cd96ea816c",
+    "content-hash": "416947a7ba402e68676693499990ac41",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1121,6 +1121,58 @@
                 "encryption"
             ],
             "time": "2017-05-21T09:20:15+00:00"
+        },
+        {
+            "name": "jagilpe/entity-list-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jagilpe/entity-list-bundle.git",
+                "reference": "ff64dcdccc541104a715f1a564a2d0ab8bc0a364"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jagilpe/entity-list-bundle/zipball/ff64dcdccc541104a715f1a564a2d0ab8bc0a364",
+                "reference": "ff64dcdccc541104a715f1a564a2d0ab8bc0a364",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": ">=1.0",
+                "php": ">=5.6.0",
+                "sensio/framework-extra-bundle": "^3.0",
+                "symfony/framework-bundle": ">=2.3",
+                "symfony/options-resolver": ">=2.3",
+                "symfony/twig-bundle": ">=2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.5",
+                "symfony/yaml": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Jagilpe\\EntityListBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Javier Gil",
+                    "email": "javier@gilpereda.com"
+                }
+            ],
+            "description": "A Symfony Bundle for the creation and rendering of list of entities",
+            "keywords": [
+                "list",
+                "symfony"
+            ],
+            "time": "2017-05-29T18:07:25+00:00"
         },
         {
             "name": "jagilpe/menu-bundle",

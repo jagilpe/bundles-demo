@@ -2,8 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\TestEntity;
-use AppBundle\Form\Type\TestEntityType;
+use AppBundle\Entity\UserProfile;
+use AppBundle\Form\Type\UserProfileType;
 use Jagilpe\AjaxModalsBundle\Controller\AjaxViewControllerTrait;
 use Jagilpe\AjaxModalsBundle\View\EndAjaxView;
 use Jagilpe\AjaxModalsBundle\View\ErrorAjaxView;
@@ -38,8 +38,8 @@ class AjaxModalsController extends Controller
      */
     public function ajaxDialogAction(Request $request)
     {
-        $testEntity = new TestEntity();
-        $form = $this->createForm(TestEntityType::class, $testEntity);
+        $testEntity = new UserProfile();
+        $form = $this->createForm(UserProfileType::class, $testEntity);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

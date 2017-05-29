@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block page_content %}
+    {{ jgp_list_render(list1) }}
+    {{ jgp_list_render(list2) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        (function($, window, document, undefined) {
+            $(document).ready(function() {
+                $('[data-target="jgp-searchable-table"]').jgpSearchableTable('setOnUpdateCallback', function() {
+                    console.log('list updated');
+                });
+            });
+        })(jQuery, window, document);
+    </script>
+{% endblock %}

@@ -95,11 +95,18 @@
                     document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/highlight-9.11.0.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
                 }
             </script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+            <script>
+                if (typeof List == 'undefined') {
+                    document.write(unescape("%3Cscript src='{{ asset('js/vendor-fallback/list.min.js') }}' type='text/javascript'%3E%3C/script%3E"));
+                }
+            </script>
         {% endblock %}
         {% block javascripts %}
             {% javascripts
                 'bundles/ajaxblocks/js/ajax-blocks.js'
                 'bundles/jagilpeajaxmodals/js/jgp-modal-dialog.js'
+                'bundles/jagilpeentitylist/js/jgp-searchable-table.js'
                 output='js/compiled/vendor.js'%}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}

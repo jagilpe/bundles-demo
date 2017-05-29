@@ -20,4 +20,7 @@
         resource="@AppBundle/Resources/config/routing/ajax_modals_demo.xml"
         prefix="/ajax-modals" />
 
+    <import
+        resource="@AppBundle/Resources/config/routing/entity_list_demo.xml"
+        prefix="/entity-list" />
 </routes>

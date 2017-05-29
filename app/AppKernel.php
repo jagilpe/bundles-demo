@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Jagilpe\AjaxBlocksBundle\AjaxBlocksBundle(),
             new Jagilpe\EncryptionBundle\JagilpeEncryptionBundle(),
             new Jagilpe\AjaxModalsBundle\JagilpeAjaxModalsBundle(),
+            new Jagilpe\EntityListBundle\JagilpeEntityListBundle(),
 
             new AppBundle\AppBundle(),
         ];

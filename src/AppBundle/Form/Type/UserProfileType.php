@@ -10,7 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface;
  *
  * @author Javier Gil Pereda <javier@gilpereda.com>
  */
-class TestEntityType extends AbstractType
+class UserProfileType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

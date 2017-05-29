@@ -21,4 +21,29 @@ class User extends BaseUser implements PKEncryptionEnabledUserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var UserProfile
+     *
+     * @ORM\OneToOne(targetEntity="UserProfile", mappedBy="user", cascade={"persist", "remove"})
+     */
+    protected $profile;
+
+    /**
+     * @return UserProfile
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * @param UserProfile $profile
+     * @return User
+     */
+    public function setProfile(UserProfile $profile)
+    {
+        $this->profile = $profile;
+        return $this;
+    }
 }
