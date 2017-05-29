@@ -1,9 +1,15 @@
-Bundles Demo Site
+Jagilpe Symfony Bundles Demo Site
 ============
 
 This is the code for the demo site for the different Jagilpe Symfony Bundles:
 
 [AjaxBlocksBundle](https://github.com/jagilpe/ajax-blocks-bundle)
+
+[AjaxModalsBundle](https://github.com/jagilpe/ajax-modals-bundle)
+
+[EncryptionBundle](https://github.com/jagilpe/encryption-bundle)
+
+[EntityListBundle](https://github.com/jagilpe/entity-list-bundle)
 
 [MenuBundle](https://github.com/jagilpe/menu-bundle)
 
