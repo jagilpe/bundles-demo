@@ -43,7 +43,6 @@ class UserProfile
     /**
      * @var \DateTime
      * @ORM\Column(type="date", nullable=false)
-     * @Assert\NotBlank()
      */
     private $birthDate;
 
